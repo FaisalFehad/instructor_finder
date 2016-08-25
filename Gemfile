@@ -13,7 +13,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
-gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 # Use Redis adapter to run Action Cable in production
@@ -29,6 +28,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
