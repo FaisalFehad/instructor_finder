@@ -14,7 +14,14 @@
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-ms-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </html>
