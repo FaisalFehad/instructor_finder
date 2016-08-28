@@ -25,11 +25,11 @@ class InstructorsController < ApplicationController
   def create
     @instructor = Instructor.new(instructor_params)
     if @instructor.save
-      flash[:success] = "Instructor has been saved!"
+      flash[:notice] = "Instructor has been saved!"
       redirect_to root_path
     else
       render 'new'
-      flash_error('Instructor hasn\'t been saved.')
+      flash_error('New instructor hasn\'t been saved.')
     end
   end
 
@@ -41,7 +41,7 @@ class InstructorsController < ApplicationController
     find_instructor
      if @instructor.destroy
        redirect_to root_path
-       flash[:success] = "The instructor has been deleted."
+       flash[:notice] = "The instructor has been deleted."
      else
        flash_error('Instructor hasn\'t been deleted.')
      end
