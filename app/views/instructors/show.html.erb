@@ -1,0 +1,25 @@
+<header><h1 class="display-4"><%= @instructor.name %></h1></header>
+
+<div class="card">
+  <div class="card-block">
+    <ul>
+      <h3>Address: <%= @instructor.address %></h3>
+      <h3>Car Model: <%= @instructor.car %></h3>
+
+      <h3>
+        Geat Box:
+      <% if @instructor.auto && @instructor.manual %>
+          Manual and Auto
+      <% elsif @instructor.auto %>
+          Auto only
+      <% elsif @instructor.manual %>
+          Manual only
+      <% end %>
+      </h3>
+      <br>
+
+      <%= link_to "Edit", edit_instructor_path, class: 'btn btn-default btn-lg' %>
+      <%= link_to "Delete", instructor_path(@instructor), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default btn-lg' %>
+    </ul>
+  </div>
+</div>
