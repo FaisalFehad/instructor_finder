@@ -14,7 +14,7 @@ class InstructorsController < ApplicationController
 
   def update
     find_instructor
-    if @instructor.update instructor_params
+    if @instructor.update(instructor_params)
       redirect_to @instructor
       flash[:notice] = "Instructor changes has been saved."
     else
