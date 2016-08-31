@@ -28,7 +28,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(instructor_params)
     if @instructor.save
       flash[:notice] = "Instructor has been saved!"
-      redirect_to root_path
+      redirect_to instructors_path
     else
       render 'new'
       flash_error('New instructor hasn\'t been saved.')
