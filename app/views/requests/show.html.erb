@@ -1,0 +1,29 @@
+<header><h1 class="display-4"><%= @instructor.name %></h1></header>
+
+<div class="card">
+  <div class="card-block">
+    <ul>
+      <h3>Address: <%= @instructor.address %></h3>
+      <h3>Car Model: <%= @instructor.car %></h3>
+
+      <h3>
+        Geat Box:
+      <% if @instructor.auto && @instructor.manual %>
+          Manual and Auto
+      <% elsif @instructor.auto %>
+          Auto only
+      <% elsif @instructor.manual %>
+          Manual only
+      <% end %>
+      </h3>
+      <br>
+      <!-- Google staticmap -->
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=
+      #{@instructor.latitude},#{@instructor.longitude}&markers=#{@instructor.latitude},
+      #{@instructor.longitude}&zoom=7&size=640x400&key=AIzaSyBewpQSvOZAsfUK7TtDYbxL34dUKP_dnP8",
+              class: 'img-fluid img-rounded', alt: "#{@instructor.name} on the map"%>
+
+      <hr>
+    </ul>
+  </div>
+</div>
