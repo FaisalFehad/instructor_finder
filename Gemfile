@@ -30,6 +30,7 @@ end
 
 group :development do
   gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
