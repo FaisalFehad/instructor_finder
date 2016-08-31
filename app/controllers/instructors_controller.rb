@@ -1,4 +1,6 @@
 class InstructorsController < ApplicationController
+  # Admin is required to login to access any action on this controller
+  before_action :authenticate_admin! # except: [:action, :action] to unlock any action
 
   def index
     @instructors = Instructor.order('created_at DESC')
