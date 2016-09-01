@@ -16,7 +16,7 @@
       <form class="navbar-form navbar-left">
         <div class="input-group">
           <%= form_tag(requests_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control' %>
+            <%= text_field_tag :search, params[:search], placeholder: "Look for a specific location", class: 'form-control' %>
             <span class="input-group-btn">
               <%= submit_tag "Search", class: 'btn btn-default' %>
             </span>
