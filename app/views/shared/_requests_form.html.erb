@@ -1,0 +1,12 @@
+<hr>
+<%= simple_form_for([@request, @instructor.requests.build], :url =>{ :action => "create" }) do |f| %>
+
+  <%= f.input :name, label: "Your name" %>
+  <%= f.input :email %>
+  <%= f.input :phone, label: "Phone number" %>
+  <%= f.input :message, as: :text %>
+  <br>
+  <%= f.button :submit, class: "btn btn-danger" %>
+<% end %>
+<br>
+<br>

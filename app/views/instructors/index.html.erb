@@ -4,6 +4,7 @@
   <div class="card-block">
     <ul>
       <% @instructors.each do |instructor| %>
+
         <fieldset class="form-group">
           <h3><%= link_to instructor.name, instructor_path(instructor) %></h3>
           <p><%= instructor.address %></p>
@@ -21,6 +22,7 @@
             <p>Unknown Gearbox</P>
           <% end %>
         <fieldset>
+
         <hr>
       <% end %>
     </ul>
