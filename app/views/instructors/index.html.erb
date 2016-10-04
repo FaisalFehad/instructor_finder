@@ -23,6 +23,10 @@
           <% end %>
         <fieldset>
 
+        <% unless admin_signed_in? %>
+          <%= link_to "Request", instructor_path(instructor),class: "btn btn-success" %>
+        <% end %>
+
         <hr>
       <% end %>
     </ul>

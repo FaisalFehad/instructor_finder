@@ -1,9 +1,14 @@
 class InstructorsController < ApplicationController
   # Admin is required to login to access any action on this controller
-  before_action :authenticate_admin!, except: [:show] #unlocked action
+  before_action :authenticate_admin!, except: [:index, :show] #unlocked action
 
   def index
-    @instructors = Instructor.order('created_at DESC')
+    if params[:search].present?
+      @instructors = Instructor.near(params[:search], 50)
+    else
+      # Shows all listed instructors by the created date.
+      @instructors = Instructor.order('created_at DESC')
+    end
   end
 
   def show
