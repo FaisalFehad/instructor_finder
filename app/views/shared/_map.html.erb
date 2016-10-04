@@ -1,0 +1,4 @@
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=
+#{@instructor.latitude},#{@instructor.longitude}&markers=#{@instructor.latitude},
+#{@instructor.longitude}&zoom=7&size=640x400&key=AIzaSyBewpQSvOZAsfUK7TtDYbxL34dUKP_dnP8",
+        class: 'img-fluid img-rounded', alt: "#{@instructor.name} on the map"%>
