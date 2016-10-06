@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  root 'instructors#index'
   devise_for :admins
   resources :instructors do
-    resources :requests, only: [:create, :new,]
+    post '/', to: "requests#create", as: "new_request"
   end
-  resources :request, except: [:create, :new]
-  root 'instructors#index'
 end
