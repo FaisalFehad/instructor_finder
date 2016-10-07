@@ -13,12 +13,14 @@ class RequestsController < ApplicationController
     @request.name = params[:name]
     @request.email = params[:email]
 
-    @request.save
-  end
-
-  private
-
-  def request_params
-    params.require(:request).permit(:name, :email, :instructor_id)
+    if InstructorsMailer.confirm_request(@request).deliver && @request.save
+      redirect_to :root
+      flash[:notice] = "Your request has been sent to your instructor. Someone
+      will be in touch with you soon."
+    else
+      redirect_to :root
+      flash[:alert] = "Faild to submit the request. Please make sure the
+      details you enterd are valid and try again."
+    end
   end
 end

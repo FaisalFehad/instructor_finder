@@ -1,0 +1,15 @@
+<h3>Hi <%= @request.instructor.name %>, </h3>
+<h4>You have a new request with the following details:</h4>
+<h4>Name: <%= @request.name %></h4>
+<h4>Email: <%= @request.email %></h4>
+<h4>Phone Number:<%= @request.phone %></h4>
+<h4>Message: <%= @request.message %></h4>
+<h4>Time: <%= @request.created_at %></h4>
+<br>
+<h4>
+  Please respond to the <%= @request.instructor.name %> as soon as possible.
+</h4>
+<br>
+<p><small>
+  This message was sent to you by https://instructorfinder.herokuapp.com
+</small></p>
