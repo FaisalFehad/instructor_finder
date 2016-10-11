@@ -23,4 +23,8 @@ class RequestsController < ApplicationController
       details you enterd are valid and try again."
     end
   end
+
+  def history
+    @request = Request.order(created_at: :desc)
+  end
 end

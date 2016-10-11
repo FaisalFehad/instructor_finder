@@ -1,0 +1,28 @@
+<header><h1 class="display-4">Requests History</h1></header>
+
+<div class="card">
+  <div class="card-block">
+    <ul>
+      <% @request.each do |request| %>
+
+        <fieldset class="form-group">
+          <p>Request ID: <%= request.id %></p>
+          <p>Pupil Name: <%= request.name %></p>
+          <p>Submitted at: <%= request.created_at %></p>
+          <p>instructor Name <%= request.instructor.name %></p>
+          <p>instructor Address <%= request.instructor.address %></p>
+          <% if request.instructor.manual? && instructor.auto?  %>
+            <p>Manual And Auto Instructor</p>
+          <% elsif request.instructor.manual? %>
+            <P>Manual Gear</p>
+          <% elsif request.instructor.auto? %>
+            <p>Auto Gear</p>
+          <% else %>
+            <p>Unknown Gearbox</P>
+          <% end %>
+        </fieldset>
+        <hr>
+      <% end %>
+    </ul>
+  </div>
+</div>
