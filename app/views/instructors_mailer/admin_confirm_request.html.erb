@@ -1,0 +1,27 @@
+<h3>Hi Admin,</h3>
+<p>This is a confirmation email for a newly submitted request with the following details:</p>
+<p>Pupil's Name: <%= @request.name %></p>
+<p>Email: <%= @request.email %></p>
+<p>Phone Number: <%= @request.phone %></p>
+<p>Message: <%= @request.message %></p>
+<br>
+<p>instructor's Name: <%= @request.instructor.name%></p>
+<p>Instructor's Address: <%= @request.instructor.address %></p>
+<p>Instructo's Email: <%= @request.instructor.email %></p>
+<p>Instructo's Car: <%= @request.instructor.car %></p>
+<p>Time: <%= Time.now.to_formatted_s(:long) %></p>
+<p>
+  Geat Box:
+<% if @request.instructor.auto && @request.instructor.manual %>
+    Manual and Auto instructor
+<% elsif @request.instructor.auto %>
+    Auto only
+<% elsif @request.instructor.manual %>
+    Manual only
+<% end %>
+</p>
+<br>
+<p><%= link_to "Click here", history_url %> To check the history of all the submitted requests.</p>
+<p><small>
+  This message was sent to you by https://instructorfinder.herokuapp.com
+</small></p>

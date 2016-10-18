@@ -1,14 +1,14 @@
 <h3>Hi <%= @request.instructor.name %>, </h3>
 <h3>You have a new job request with the following details:</h3>
-<h4>Name: <%= @request.name %></h4>
-<h4>Email: <%= @request.email %></h4>
-<h4>Phone Number: <%= @request.phone %></h4>
-<h4>Message: <%= @request.message %></h4>
-<h4>Time: <%= Time.now.to_formatted_s(:long) %></h4>
+<p>Name: <%= @request.name %></p>
+<p>Email: <%= @request.email %></p>
+<p>Phone Number: <%= @request.phone %></p>
+<p>Message: <%= @request.message %></p>
+<p>Time: <%= Time.now.to_formatted_s(:long) %></p>
 <br>
-<h4>
-  Please respond to the <%= @request.instructor.name %> as soon as possible.
-</h4>
+<p>
+  Please respond to the <%= @request.name %> as soon as possible.
+</p>
 <br>
 <p><small>
   This message was sent to you by https://instructorfinder.herokuapp.com If you
