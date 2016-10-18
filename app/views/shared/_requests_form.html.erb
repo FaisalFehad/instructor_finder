@@ -1,18 +1,32 @@
-<hr>
 <%= form_tag [@request, @instructor] do %>
-  <p>Name:</p>
-  <%= text_field_tag :name %>
-  <p>Email:</p>
-  <%= text_field_tag :email %>
-  <p>Phone Number:</p>
-  <%= text_field_tag :phone %>
-  <p>Message:</p>
-  <%= text_area_tag :message %>
-  <%= submit_tag "Submit Request" %>
-<% end %>
+<div class="container">
 
-<%= @content %>
-<%= @title %>
+  <form>
+    <div class="input-group">
+      <%= label :name, "Name:" %>
+      <%= text_field_tag :name, nil, placeholder: "Your name",
+                                     class: "form-control"%>
+    </div>
 
-<br>
-<br>
+    <div class="input-group">
+      <%= label :email, "Email:" %>
+      <%= text_field_tag :email, nil, placeholder: "Your email address", class: "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= label :phone, "Phone Number" %>
+      <%= text_field_tag :phone, nil, placeholder: "Your Primary Mobile Phone Number", class: "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= label :message, "Message:" %>
+      <%= text_area_tag :message, nil, placeholder: "You can add info like when yould you like to start", class: "form-control" %>
+    </div>
+    <br>
+    <div class="form-actions">
+      <%= submit_tag "Submit Request", class: 'btn btn-primary'%>
+    </div>
+  </form>
+    <% end %>
+  </div>
+</div>
