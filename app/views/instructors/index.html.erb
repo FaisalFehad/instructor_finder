@@ -6,7 +6,9 @@
       <% @instructors.each do |instructor| %>
 
         <fieldset class="form-group">
-          <h3><%= link_to instructor.name, instructor_path(instructor) %></h3>
+          <% if admin_signed_in? %>
+            <h3><%= link_to instructor.name, instructor_path(instructor) %></h3>
+          <% end %>
           <p><%= instructor.address %></p>
           <p><%= instructor.car %></p>
         </fieldset>
