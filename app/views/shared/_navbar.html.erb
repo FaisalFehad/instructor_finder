@@ -23,6 +23,23 @@
           <% end %>
         </div>
       </form>
+      <ul class="nav navbar-nav navbar-right">
+        <% if admin_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Control <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "New instructor", new_instructor_path %></li>
+              <li><%= link_to "Requests history", history_url %></li>
+              <li><%= link_to "Listed instructors", instructors_path %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Edit your account", edit_admin_registration_path %></li>
+              <li><%= link_to "Sign out", destroy_admin_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <li><%= link_to "Admin Log in", new_admin_session_path %></li>
+          <% end %>
+        </li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
